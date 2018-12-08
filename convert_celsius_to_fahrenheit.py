@@ -1,7 +1,7 @@
-def convert_to_f(c):
-    return float(c) * 9 / 5 + 32
+def convert_to_f(celsius):
+    fahrenheit = celsius * 9 / 5 + 32
 
-celsius = input("Celsius: ")
-fahrenheit = convert_to_f(celsius)
+    return fahrenheit
 
-print("Fahrenheit: " + str(fahrenheit))
+
+print(convert_to_f(30))
