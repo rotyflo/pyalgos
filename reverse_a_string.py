@@ -1,11 +1,6 @@
 def reverse_string(string):
-    array = list(string)
-    array.reverse()
-    reassembled_string = ''.join(array)
-    
-    return reassembled_string
+	"""Reverse the provided string"""
+    return ''.join(reversed(list(string)))
 
-string = input("Input: ")
-reversed_string = reverse_string(string)
 
-print("Reversed: " + reversed_string)
+print(reverse_string("hello"))

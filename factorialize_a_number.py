@@ -1,4 +1,5 @@
 def factorialize(num):
+    """Return the factorial of the provided integer"""
     factorial = 1
     
     for i in range(1, num + 1):
@@ -6,7 +7,5 @@ def factorialize(num):
 
     return factorial
 
-user_input = int(input("Give me a number: "))
-factorial = factorialize(user_input)
 
-print("Factorial: " + str(factorial))
+print(factorialize(5))

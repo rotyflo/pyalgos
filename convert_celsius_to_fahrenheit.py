@@ -1,7 +1,6 @@
 def convert_to_f(celsius):
-    fahrenheit = celsius * 9 / 5 + 32
-
-    return fahrenheit
+    """Convert celsius into fahrenheit"""
+    return celsius * 9 / 5 + 32
 
 
 print(convert_to_f(30))
