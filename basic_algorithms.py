@@ -129,3 +129,16 @@ def franken_splice(arr1, arr2, n):
     return arr2
 
 # print(franken_splice([1, 2, 3], [4, 5, 6], 1))
+
+
+def bouncer(array):
+    """Remove all falsy values from an array"""
+    filtered_array = []
+
+    for item in array:
+        if item:
+            filtered_array.append(item)
+
+    return filtered_array
+
+print(bouncer([7, "ate", "", False, 9]))
