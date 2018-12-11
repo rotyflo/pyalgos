@@ -2,10 +2,14 @@ def convert_to_f(celsius):
     """Convert celsius into fahrenheit"""
     return celsius * 9 / 5 + 32
 
+# print(convert_to_f(30))
+
 
 def reverse_string(string):
     """Reverse the provided string"""
     return ''.join(reversed(list(string)))
+
+# print(reverse_string("hello"))
 
 
 def factorialize(num):
@@ -16,6 +20,8 @@ def factorialize(num):
         factorial *= i
 
     return factorial
+
+# print(factorialize(5))
 
 
 def find_longest_word_length(string):
@@ -29,6 +35,8 @@ def find_longest_word_length(string):
             longest = len(word)
 
     return longest
+
+# print(find_longest_word_length("The quick brown fox jumped over the lazy dog"))
 
 
 def largest_of_four(array):
@@ -47,16 +55,22 @@ def largest_of_four(array):
 
     return largest_of_each
 
+# print(largest_of_four([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
+
 
 def confirm_ending(string, target):
     """Check if a string (first arg) ends with the given target string"""
     return target == string[-len(target):]
+
+# print(confirm_ending("Bastion", "n"))
 
 
 def repeat_string_num_times(string, num):
     """Repeat a given string for num times.
        Return an empty string if num is not a positive number."""
     return string * num
+
+# print(repeat_string_num_times("abc", 3))
 
 
 def truncate_string(string, num):
@@ -65,4 +79,18 @@ def truncate_string(string, num):
     if len(string) > num:
         return string[:num] + "..."
     else:
-        return string 
+        return string
+
+# print(truncated("A-tisket a-tasket A green and yellow basket", 8))
+
+
+def find_element(array, func):
+    """Look through an array and return the first element in the array that 
+       passes a truth test. If no element passes the test, return undefined."""
+    for num in array:
+        if func(num) == True:
+            return num
+
+# print(find_element([1, 2, 3, 4], lambda num: num % 2 == 0))
+
+
