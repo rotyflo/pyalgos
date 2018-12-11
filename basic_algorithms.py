@@ -94,3 +94,13 @@ def find_element(array, func):
 # print(find_element([1, 2, 3, 4], lambda num: num % 2 == 0))
 
 
+def boo_who(boolean):
+    """Check if a value is classified as a boolean primitive.
+       Return true or false."""
+    #Filter out (True == 1) and (False == 0)
+    strict_true = boolean == True and type(boolean) == type(True)
+    strict_false = boolean == False and type(boolean) == type(False)
+
+    return strict_true or strict_false
+
+# print(boo_who(None))
