@@ -104,3 +104,17 @@ def boo_who(boolean):
     return strict_true or strict_false
 
 # print(boo_who(None))
+
+
+def title_case(string):
+    """Return the provided string with the first letter of each word capitalized.
+       Make sure the rest of the word is in lower case."""
+    #Corrects (I'm) to (I'M) error caused by the title() method
+    words = string.split()
+    title_case_words = []
+    
+    [title_case_words.append(word[0].upper() + word[1:]) for word in words]
+
+    return ' '.join(title_case_words)
+
+# print(title_case("I'm a little tea pot"))
