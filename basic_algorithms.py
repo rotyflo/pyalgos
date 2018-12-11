@@ -118,3 +118,14 @@ def title_case(string):
     return ' '.join(title_case_words)
 
 # print(title_case("I'm a little tea pot"))
+
+
+def franken_splice(arr1, arr2, n):
+    """Insert arr1 at index n of arr2"""
+    while arr1:
+        arr2.insert(n, arr1.pop(0))
+        n += 1
+
+    return arr2
+
+# print(franken_splice([1, 2, 3], [4, 5, 6], 1))
