@@ -152,3 +152,18 @@ def get_index_to_ins(array, num):
             return index
 
 # print(get_index_to_ins([40, 60], 50))
+
+def mutation(arr):
+    """Return true if the string in the first element of the array contains all
+       of the letters of the string in the second element of the array"""
+    matching_letters = 0
+
+    for letter_1 in arr[1]:
+        for letter_0 in arr[0]:
+            if letter_0.lower() == letter_1.lower():
+                matching_letters += 1
+                break
+
+    return matching_letters == len(arr[1])
+
+# print(mutation(["hello", "hey"]))
