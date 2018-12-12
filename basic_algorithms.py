@@ -153,6 +153,7 @@ def get_index_to_ins(array, num):
 
 # print(get_index_to_ins([40, 60], 50))
 
+
 def mutation(arr):
     """Return true if the string in the first element of the array contains all
        of the letters of the string in the second element of the array"""
@@ -167,3 +168,24 @@ def mutation(arr):
     return matching_letters == len(arr[1])
 
 # print(mutation(["hello", "hey"]))
+
+
+def chunk_array_in_groups(arr, size):
+    """Split an array into groups the length of size and returns
+       them as a two-dimensional array"""
+    group_of_arrays = []
+
+    while arr:
+        new_array = []
+
+        for num in range(size):
+            if arr:
+                new_array.append(arr.pop(0))
+            else:
+                break
+
+        group_of_arrays.append(new_array)
+
+    return group_of_arrays
+
+# print(chunk_array_in_groups(["a", "b", "c", "d"], 2))
