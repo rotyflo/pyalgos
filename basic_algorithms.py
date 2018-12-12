@@ -141,4 +141,14 @@ def bouncer(array):
 
     return filtered_array
 
-print(bouncer([7, "ate", "", False, 9]))
+# print(bouncer([7, "ate", "", False, 9]))
+
+
+def get_index_to_ins(array, num):
+    """Return the lowest index at which num should be inserted into array
+       once it has been sorted. The returned value should be a number."""
+    for index in range(len(array)):
+        if sorted(array)[index] >= num:
+            return index
+
+# print(get_index_to_ins([40, 60], 50))
