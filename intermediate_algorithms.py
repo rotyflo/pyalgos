@@ -44,7 +44,7 @@ def what_is_in_a_name(collection, source):
         for key in dictionary.keys():
             if key in source.keys():
                 if dictionary[key] == source[key]:
-                    arr.append(source)
+                    arr.append(dictionary)
 
     return arr
 
