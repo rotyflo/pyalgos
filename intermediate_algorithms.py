@@ -73,3 +73,17 @@ def spinal_case(string):
     return '-'.join(new_string.lower().split())
 
 # print(spinal_case("This Is Spinal Tap")
+
+
+def translate_pig_latin(string):
+    """Translate the provided string to pig latin."""
+    for char in string:
+        if char in 'aeiou':
+            i = string.index(char)
+
+            if i == 0:
+                return string + 'way'
+            else:
+                return string[i:] + string[:i] + 'ay'
+
+# print(translate_pig_latin('consonant'))
