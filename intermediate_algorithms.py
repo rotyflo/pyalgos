@@ -83,3 +83,22 @@ def translate_pig_latin(string):
                 return string[i:] + string[:i] + 'ay'
 
 # print(translate_pig_latin('consonant'))
+
+
+def my_replace(string, before, after):
+    """
+    Perform a search and replace on the sentence using the arguments provided 
+    and return the new sentence. Preserve the case of the first character
+    in the original word when you are replacing it.
+    """
+    array = string.split()
+
+    if before == before.title():
+        after = after.title()
+
+    new_array = [after if word == before else word for word in array]
+    new_sentence = ' '.join(new_array)
+
+    return new_sentence
+
+print(my_replace("A quick brown fox jumped over the lazy dog", 'jumped', 'leaped'))
