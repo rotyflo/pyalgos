@@ -26,3 +26,10 @@ def diff_array(arr1, arr2):
 # print(diff_array([1, 2, 3, 5], [1, 2, 3, 4, 5]))
 
 
+def destroyer(arr, *args):
+    """Remove all elements from arr that are given in args."""
+    arr = [item for item in arr if item not in args]
+
+    return arr
+
+print(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
