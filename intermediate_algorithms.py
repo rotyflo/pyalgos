@@ -121,3 +121,22 @@ def pair_element(string):
     return array_of_pairs
 
 # print(pair_element('GCG'))
+
+
+def fear_not_letter(string):
+    """Find the missing letter in the passed letter range and return it."""
+    array_of_char_codes = [ord(char) for char in string]
+
+    for char_code in array_of_char_codes:
+        if char_code == array_of_char_codes[-1]:
+            return None
+
+        next_index = array_of_char_codes.index(char_code) + 1
+        next_char_code = array_of_char_codes[next_index]
+
+        if next_char_code - char_code != 1:
+            missing_letter = chr(char_code + 1)
+            
+            return missing_letter
+
+# print(fear_not_letter('abce'))
