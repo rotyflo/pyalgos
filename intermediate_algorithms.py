@@ -30,4 +30,26 @@ def destroyer(arr, *args):
     """Remove all elements from arr that are given in args."""
     return [item for item in arr if item not in args]
 
-print(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
+# print(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
+
+
+def what_is_in_a_name(collection, source):
+    """
+    Make a function that looks through an array of objects and returns 
+    an array of all objects that have matching name and value pairs.
+    """
+    arr = []
+
+    for dictionary in collection:
+        for key in dictionary.keys():
+            if key in source.keys():
+                if dictionary[key] == source[key]:
+                    arr.append(source)
+
+    return arr
+
+# print(what_is_in_a_name(
+#         [{'first': 'Romeo', 'last': 'Montague'},
+#          {'first': 'Mercutio', 'last': None},
+#          {'first': 'Tybalt', 'last': 'Capulet'}],
+#         {'last': 'Capulet'}))
