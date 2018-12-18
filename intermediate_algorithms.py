@@ -15,6 +15,7 @@ def sum_all(arr):
 
 
 def diff_array(arr1, arr2):
+    """Return the difference between two arrays in the form of an array."""
     new_arr = []
 
     [new_arr.append(item) for item in arr1 if item not in arr2]
@@ -23,3 +24,5 @@ def diff_array(arr1, arr2):
     return new_arr
 
 # print(diff_array([1, 2, 3, 5], [1, 2, 3, 4, 5]))
+
+
