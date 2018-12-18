@@ -53,3 +53,23 @@ def what_is_in_a_name(collection, source):
 #          {'first': 'Mercutio', 'last': None},
 #          {'first': 'Tybalt', 'last': 'Capulet'}],
 #         {'last': 'Capulet'}))
+
+
+def spinal_case(string):
+    """
+    Convert a string to spinal case.
+    Spinal case is all-lowercase-words-joined-by-dashes.
+    """
+    new_string = ''
+
+    for char in string:
+        if char == '_' or char == '-':
+            new_string += ' '
+        elif char == char.upper():
+            new_string += ' ' + char
+        else:
+            new_string += char
+
+    return '-'.join(new_string.lower().split())
+
+# print(spinal_case("This Is Spinal Tap")
