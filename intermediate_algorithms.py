@@ -101,4 +101,23 @@ def my_replace(string, before, after):
 
     return new_sentence
 
-print(my_replace("A quick brown fox jumped over the lazy dog", 'jumped', 'leaped'))
+# print(my_replace("A quick brown fox jumped over the lazy dog", 'jumped', 'leaped'))
+
+
+def pair_element(string):
+    """
+    Take each character, get its pair, and return the results as a 2d array.
+    For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
+    """
+    array_of_pairs = []
+    base_pairs = {
+        'A': ['A', 'T'],
+        'T': ['T', 'A'],
+        'C': ['C', 'G'],
+        'G': ['G', 'C']}
+
+    [array_of_pairs.append(base_pairs[char]) for char in string]
+    
+    return array_of_pairs
+
+# print(pair_element('GCG'))
