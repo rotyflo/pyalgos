@@ -140,3 +140,20 @@ def fear_not_letter(string):
             return missing_letter
 
 # print(fear_not_letter('abce'))
+
+
+def unite_unique(*arrays):
+    """
+    Take two or more arrays and return a new array of unique values in
+    the order of the original provided arrays.
+    """
+    unique_items = []
+
+    for array in arrays:
+        for item in array:
+            if item not in unique_items:
+                unique_items.append(item)
+
+    return unique_items
+
+# print(unite_unique([1, 3, 2], [5, 2, 1, 4], [2, 1]))
