@@ -157,3 +157,23 @@ def unite_unique(*arrays):
     return unique_items
 
 # print(unite_unique([1, 3, 2], [5, 2, 1, 4], [2, 1]))
+
+
+def convert_html(string):
+    html_entities = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&apos;'}
+    new_string = ""
+
+    for char in string:
+        if char in html_entities.keys():
+            new_string += html_entities[char]
+        else:
+            new_string += char
+
+    return new_string
+
+print(convert_html("Dolce & Gabbana"))
