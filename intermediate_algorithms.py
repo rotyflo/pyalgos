@@ -223,3 +223,28 @@ def sum_primes(num):
     return sum(prime_numbers)
 
 # print(sum_primes(977))
+
+
+def smallest_common(arr):
+    """
+    Find the smallest common multiple of the provided parameters that can be
+    evenly divided by both, as well as by all sequential numbers in the range
+    between these parameters.
+    """
+    arr.sort()
+    first = arr[0]
+    last = arr[1] + 1
+    multiple = 0
+    found = False
+
+    while not found:
+        found = True
+        multiple += 1
+
+        for num in range(first, last):
+            if multiple % num != 0:
+                found = False
+
+    return multiple
+
+# print(smallest_common([5, 1]))
