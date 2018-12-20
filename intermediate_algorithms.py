@@ -184,6 +184,10 @@ def convert_html(string):
 
 
 def sum_odd_fibs(num):
+    """
+    Return the sum of all odd Fibonacci numbers
+    that are less than or equal to num.
+    """
     fib_nums = [1]
     fib = 1
 
@@ -194,8 +198,28 @@ def sum_odd_fibs(num):
         second_last_num = fib_nums[-2]
         fib = last_num + second_last_num
 
-    odd_fibs = [fib for fib in fib_nums if fib % 2 == 1]
+    summed_odds = sum([fib for fib in fib_nums if fib % 2 == 1])
 
-    return sum(odd_fibs)
+    return summed_odds
 
-print(sum_odd_fibs(4))
+# print(sum_odd_fibs(4))
+
+
+def sum_primes(num):
+    """Sum all the prime numbers up to and including the provided number."""
+    prime_numbers = []
+
+    for numerator in range(2, num + 1):
+        is_prime = True
+
+        for denominator in range(2, numerator):
+            if numerator % denominator == 0:
+                is_prime = False
+                break
+
+        if is_prime:
+            prime_numbers.append(numerator)
+
+    return sum(prime_numbers)
+
+# print(sum_primes(977))
