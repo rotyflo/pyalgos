@@ -160,6 +160,10 @@ def unite_unique(*arrays):
 
 
 def convert_html(string):
+    """
+    Convert the characters &, <, >, " (double quote), and ' (apostrophe),
+    in a string to their corresponding HTML entities.
+    """
     html_entities = {
         '&': '&amp;',
         '<': '&lt;',
@@ -176,4 +180,22 @@ def convert_html(string):
 
     return new_string
 
-print(convert_html("Dolce & Gabbana"))
+# print(convert_html("Dolce & Gabbana"))
+
+
+def sum_odd_fibs(num):
+    fib_nums = [1]
+    fib = 1
+
+    while fib <= num:
+        fib_nums.append(fib)
+
+        last_num = fib_nums[-1]
+        second_last_num = fib_nums[-2]
+        fib = last_num + second_last_num
+
+    odd_fibs = [fib for fib in fib_nums if fib % 2 == 1]
+
+    return sum(odd_fibs)
+
+print(sum_odd_fibs(4))
