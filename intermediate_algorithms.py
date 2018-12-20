@@ -248,3 +248,15 @@ def smallest_common(arr):
     return multiple
 
 # print(smallest_common([5, 1]))
+
+
+def drop_elements(array, func):
+    """
+    Iterate through array and remove each element until func returns true when
+    the iterated element is passed through it.
+    """
+    filtered_array = [item for item in array if func(item)]
+
+    return filtered_array
+
+# print(drop_elements([1, 2, 3], lambda n: n < 3))
