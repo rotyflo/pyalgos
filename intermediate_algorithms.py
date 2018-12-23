@@ -319,3 +319,81 @@ def truth_check(collection, pre):
 #      {"user": "Laa-Laa", "sex": "female"},
 #      {"user": "Po", "sex": "female"}],
 #     "sex"))
+
+
+def add_together(*args):
+    """
+    Sums two arguments together. If only one argument is provided,
+    then return a function that expects one argument and returns the sum.
+    """
+    if len(args) == 1:
+        return lambda x: args[0] + x
+    else:
+        return args[0] + args[1]
+
+# sum_two_and = add_together(2)
+
+# print(sum_two_and(3))
+
+
+class Person():
+    """
+    Build a class with the following methods:
+    get_first_name()
+    get_last_name()
+    get_full_name()
+    set_first_name(first)
+    set_last_name(last)
+    set_full_name(full)
+    """
+
+    def __init__(self, first_name, last_name):
+        """Initialize values for person"""
+        self.first_name = first_name
+        self.last_name = last_name
+        self.full_name = first_name + ' ' + last_name
+
+    def get_first_name(self):
+        """Get first name of person."""
+        return self.first_name.title()
+
+    def get_last_name(self):
+        """Get last name of person."""
+        return self.last_name.title()
+
+    def get_full_name(self):
+        """Get full name of person."""
+        return self.full_name.title()
+
+    def set_first_name(self, first):
+        """Set first name of person."""
+        self.first_name = first
+        self.full_name = self.first_name + ' ' + self.last_name
+
+    def set_last_name(self, last):
+        """Set last name of person."""
+        self.last_name = last
+        self.full_name = self.first_name + ' ' + self.last_name
+
+    def set_full_name(self, full):
+        """Set full name of person."""
+        self.full_name = full
+
+        names = full.split()
+
+        self.first_name = names[0]
+        self.last_name = names[-1]
+
+# bob = Person('bob', 'ross')
+
+# print(bob.get_full_name())
+
+# bob.set_first_name('robert')
+
+# print(bob.get_full_name())
+
+# bob.set_full_name('robert tyler flores')
+
+# print(bob.get_first_name())
+# print(bob.get_last_name())
+# print(bob.get_full_name())
