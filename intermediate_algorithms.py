@@ -1,3 +1,5 @@
+import math
+
 def sum_all(arr):
     """
     Return the sum of two numbers and all the numbers between them.
@@ -397,3 +399,29 @@ class Person():
 # print(bob.get_first_name())
 # print(bob.get_last_name())
 # print(bob.get_full_name())
+
+
+def orbital_period(arr):
+    """
+    Return a new array that transforms the elements' average
+    altitude into their orbital periods in seconds.
+    """
+    GM = 398600.4418
+    EARTH_RADIUS = 6367.4447
+    orbital_periods = []
+
+    for obj in arr:
+        name = obj['name']
+        avg_alt = obj['avg alt']
+        semi_major_axis = EARTH_RADIUS + avg_alt
+        orbital_period = (2 * math.pi) * math.sqrt((semi_major_axis)**3 / GM)
+        rounded_op = round(orbital_period)
+
+        orbital_periods.append({'name': name, 'orbital period': rounded_op})
+
+    return orbital_periods
+
+# print(orbital_period(
+#     [{'name': 'iss', 'avg alt': 413.6},
+#      {'name': 'hubble', 'avg alt': 556.7},
+#      {'name': 'moon', 'avg alt': 378632.553}]))
