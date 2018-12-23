@@ -297,6 +297,25 @@ def binary_agent(string):
 
     return decoded_string
 
-print(binary_agent("01000001 01110010 01100101 01101110 00100111 01110100 "
-    "00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 "
-    "01110011 00100000 01100110 01110101 01101110 00100001 00111111"))
+# print(binary_agent("01000001 01110010 01100101 01101110 00100111 01110100 "
+#     "00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 "
+#     "01110011 00100000 01100110 01110101 01101110 00100001 00111111"))
+
+
+def truth_check(collection, pre):
+    """Check if 'pre' is truthy on all the elements of 'collection'."""
+    for dictionary in collection:
+        if pre not in dictionary.keys():
+            return False
+
+        if not dictionary[pre]:
+            return False
+
+    return True
+
+# print(truth_check(
+#     [{"user": "Tinky-Winky", "sex": "male"},
+#      {"user": "Dipsy", "sex": "male"},
+#      {"user": "Laa-Laa", "sex": "female"},
+#      {"user": "Po", "sex": "female"}],
+#     "sex"))
