@@ -260,3 +260,16 @@ def drop_elements(array, func):
     return filtered_array
 
 # print(drop_elements([1, 2, 3], lambda n: n < 3))
+
+
+def steamroll_array(array):
+    """
+    Flatten a nested array. You must account for varying levels of nesting.
+    """
+    flat_str = str(array).replace('[', '').replace(']', '').replace(' ,', '')
+    flat_arr = eval('[' + flat_str + ']')
+
+    return flat_arr
+
+
+# print(steamroll_array([1, {}, [3, [[4]]]]))
