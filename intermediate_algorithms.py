@@ -271,5 +271,32 @@ def steamroll_array(array):
 
     return flat_arr
 
+# print(steamroll_array([1, [2], [3, [[4]]]]))
 
-# print(steamroll_array([1, {}, [3, [[4]]]]))
+
+def binary_agent(string):
+    """
+    Return an English translated sentence of the passed binary string.
+    The binary string will be space separated.
+    """
+    list_of_bytes = string.split()
+    decoded_string = ''
+
+    for byte in list_of_bytes:
+        bit_value = 128
+        byte_value = 0
+
+        for bit in byte:
+            if bit == '1':
+                byte_value += bit_value
+
+            bit_value /= 2
+
+        character = chr(int(byte_value))
+        decoded_string += character
+
+    return decoded_string
+
+print(binary_agent("01000001 01110010 01100101 01101110 00100111 01110100 "
+    "00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 "
+    "01110011 00100000 01100110 01110101 01101110 00100001 00111111"))
