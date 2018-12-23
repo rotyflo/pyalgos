@@ -279,10 +279,10 @@ def binary_agent(string):
     Return an English translated sentence of the passed binary string.
     The binary string will be space separated.
     """
-    list_of_bytes = string.split()
+    binary = string.split()
     decoded_string = ''
 
-    for byte in list_of_bytes:
+    for byte in binary:
         bit_value = 128
         byte_value = 0
 
